@@ -27,7 +27,7 @@ export const ImageSection = styled(Container)`
   width: 100%;
 `;
 export const LoveIconWrapper = styled(Container)`
-  background: rgba(250, 250, 250, 0.3);
+  background-color: rgba(250, 250, 250, 0.3);
   padding-horizontal: 2%;
   width: auto;
   border-bottom-right-radius: 40;

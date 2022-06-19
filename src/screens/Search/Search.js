@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {SafeArea} from '../../components/utility/safe-area.component';
-import {PageContainer, ContentContainer} from './home.styles';
+import {PageContainer, ContentContainer} from './Search.styles';
 import {Header} from '../../components/header/header.component';
 import {Spacer} from '../../components/spacer/spacer.component';
 import {RestrauntsBranchCard} from '../../components/restrauntsBranchCard/restrauntsBranchCard.component';
@@ -10,20 +10,20 @@ import {View, Text} from 'react-native';
 import {carMakeData} from '../data';
 import {SearchBar} from '../../components/searchBar/searchBar.component';
 
-const Home = () => {
+const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
-const [carList, setCarList] = useState(carMakeData);
+  const [carList, setCarList] = useState(carMakeData);
 
-    const filteredCarList = carList.filter(car =>
-      car.carMake.toLowerCase().includes(searchQuery.toLowerCase()),
-    );
-  
+  const filteredCarList = carList.filter(car =>
+    car.carMake.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
   return (
     <SafeArea>
       <PageContainer paddingHorizontal>
-        <Header text="Car Makes" />
+        <Header text="Search" />
         <Spacer size="large" position="top" />
-        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} sort />
         <Spacer size="large" position="top" />
         <ContentContainer
           showsVerticalScrollIndicator={false}
@@ -34,7 +34,8 @@ const [carList, setCarList] = useState(carMakeData);
               <RestrauntsBranchCard
                 image={item.image}
                 branchName={item.carMake}
-                onPress={() =>{}
+                onPress={
+                  () => {}
                   // navigation.navigate('CarDetails', {carMake: item.carMake})
                 }
               />
@@ -46,4 +47,4 @@ const [carList, setCarList] = useState(carMakeData);
     </SafeArea>
   );
 };
-export default Home;
+export default Search;

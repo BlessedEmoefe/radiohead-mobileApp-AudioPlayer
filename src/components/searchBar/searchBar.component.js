@@ -12,6 +12,9 @@ import Chart from "react-native-vector-icons/AntDesign";
 import { Badge } from "react-native-paper";
 import Filter from "react-native-vector-icons/Ionicons";
 import { Spacer } from "../spacer/spacer.component";
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+
 export const SearchBar = ({
   sort,
   cart,
@@ -27,9 +30,10 @@ export const SearchBar = ({
     <SearchBarContainer>
       <SearchBarWrapper flexDirection="row" justifyContent="center">
         <StyledSearchbar
-          placeholder="Search Car Make"
+          placeholder="Search"
           onChangeText={onChangeSearch}
           value={searchQuery}
+         
         />
         <Spacer size="small" position="right" />
         {cart ? (

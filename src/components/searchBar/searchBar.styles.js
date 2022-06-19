@@ -16,8 +16,8 @@ export const SearchBarWrapper = styled(Container)`
 export const StyledSearchbar = styled(Searchbar)`
   background-color: white;
   width: 100%;
-  border-radius: 16px;
-  height: 52px;
+  border-radius: 20px;
+  height: 42px;
 `;
 export const IconContainer = styled.TouchableOpacity`
   height: 50px;

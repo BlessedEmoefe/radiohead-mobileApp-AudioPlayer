@@ -1,41 +1,40 @@
 import React from 'react';
 import {Spacer} from '../spacer/spacer.component';
-// import {useNavigation} from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core';
 import {
   HeaderCover,
   LeftSide,
   MenuIconWrapper,
   HeaderText,
+  LogoImage,
   UserImage,
+  CloseArrow,
   RightSide,
 } from './header.styles';
-import {Arrow, Menu} from '../../assets/svg/Icons';
+import {ArrowDown, Menu} from '../../assets/svg/Icons';
 
-export const Header = ({svg, text, source, paddingHorizontal, position}) => {
-  // const navigation = useNavigation();
+export const Header = ({svg, text, source, logo, closeArrow, background,position}) => {
+  const navigation = useNavigation();
   return (
     <HeaderCover
       flexDirection="row"
-      paddingHorizontal={paddingHorizontal}
+      background={background}
+      paddingHorizontal
       position={position}>
       <LeftSide flexDirection="row" width="auto" justifyContent="flex-start">
         {svg == 'menu' ? (
-          // <MenuIconWrapper onPress={() => navigation.toggleDrawer()}>
-          //   <Menu onPress={() => { }} />
-          // </MenuIconWrapper>
-          <MenuIconWrapper onPress={() => {}}>
+          <MenuIconWrapper onPress={() => navigation.toggleDrawer()}>
             <Menu onPress={() => {}} />
           </MenuIconWrapper>
-        ) : svg == 'previous' ? (
-          // <MenuIconWrapper onPress={() => navigation.goBack()}>
-          //   <Arrow onPress={() => navigation.goBack()} />
-          // </MenuIconWrapper>
-          <MenuIconWrapper onPress={() => {}}>
-            <Arrow onPress={() => {}} />
+        ) : null}
+        {svg == 'previous' ? (
+          <MenuIconWrapper onPress={() => navigation.goBack()}>
+            <Arrow onPress={() => navigation.goBack()} />
           </MenuIconWrapper>
         ) : null}
         {svg && <Spacer size="medium" position="right" />}
         {text ? <HeaderText variant="smallTitle">{text}</HeaderText> : null}
+        {logo ? <LogoImage source={logo} resizeMode="cover" /> : null}
       </LeftSide>
       {source ? (
         <RightSide
@@ -45,10 +44,19 @@ export const Header = ({svg, text, source, paddingHorizontal, position}) => {
           <UserImage source={source} />
         </RightSide>
       ) : null}
+
+      {closeArrow ? (
+        <CloseArrow
+          onTouchStart={() => {
+            navigation.navigate('CourierProfile');
+          }}>
+          <ArrowDown />
+        </CloseArrow>
+      ) : null}
     </HeaderCover>
   );
 };
 
-Header.defaultProps = {
-  text: 'Header',
-};
+// Header.defaultProps = {
+//   text: 'Header',
+// };

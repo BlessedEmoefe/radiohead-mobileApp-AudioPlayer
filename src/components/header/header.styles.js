@@ -5,6 +5,11 @@ import {fontWeights, fontSizes} from '../../infrastructure/theme/fonts';
 import {Container, PressableContainer} from '../container/container.component';
 
 export const HeaderCover = styled(Container)`
+  background-color: ${props =>
+    props.background ? props.background : colors.bg.light};
+
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -18,6 +23,11 @@ export const HeaderText = styled(Text)`
   font-weight: ${fontWeights.semiBold};
 `;
 
+export const LogoImage = styled.Image`
+ /* width:40%; */
+ height:10;
+`;
+
 export const LeftSide = styled(Container)``;
 
 export const MenuIconWrapper = styled(PressableContainer)`
@@ -29,7 +39,14 @@ export const RightSide = styled(Container)`
   height: 36;
   border-radius: 36;
   overflow: hidden;
-  border: 1px solid ${colors.primary};
+`;
+
+export const CloseArrow = styled(Container)`
+  width: 36;
+  height: 36;
+  overflow: hidden;
+  justify-content: center;
+  align-items:center;
 `;
 
 export const UserImage = styled.Image`

@@ -37,7 +37,7 @@ export const Arrow = ({ width, height }) => (
     height={height || "28"}
     width={width || "28"}
     viewBox="0 0 28 19"
-    fill={colors.primary}
+    fill={colors.white}
   >
     <Defs></Defs>
     <G transform="translate(-0.441 0.206)">
@@ -49,6 +49,22 @@ export const Arrow = ({ width, height }) => (
         />
       </G>
     </G>
+  </Svg>
+);
+
+
+export const ArrowDown = ({width, height}) => (
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    height={height || '14'}
+    width={width || '23'}
+    viewBox="0 0 23 14"
+    fill={'none'}>
+        <Path
+       d="M0 2.86016C0 2.15189 0.260387 1.44311 0.784157 0.889335C1.86868 -0.255341 3.67289 -0.300988 4.81389 0.787006L11.5199 7.18656L18.1795 0.793527C19.3165 -0.29848 21.1207 -0.258351 22.2093 0.883315C23.2978 2.02548 23.2573 3.8358 22.1198 4.9278L13.4971 13.2069C12.3976 14.2623 10.6658 14.2643 9.56281 13.2134L0.886112 4.93482C0.297871 4.37152 0 3.6176 0 2.86016Z"
+      fill="#F4EEFF"
+        />
+
   </Svg>
 );
 

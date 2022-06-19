@@ -10,7 +10,7 @@ export const Container = styled.View`
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : "flex-start"};
   align-items: ${(props) => (props.alignItems ? props.alignItems : "center")};
-  padding-horizontal: ${(props) => (props.paddingHorizontal ? "4%" : "0")};
+  padding-horizontal: ${(props) => (props.paddingHorizontal ? "5%" : "0")};
   padding-vertical: ${(props) =>
     props.paddingVertical ? props.paddingVertical : "0"};
   background: ${(props) =>

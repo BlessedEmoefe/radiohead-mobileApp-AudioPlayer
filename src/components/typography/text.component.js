@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 const defaultTextStyles = theme => `
  
   font-weight: ${theme.fontWeights.regular};
-  color: ${theme.colors.text.strong};
+  color: ${theme.colors.white};
   flex-wrap: wrap;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -42,7 +42,7 @@ const smallHint = theme => `
 `;
 
 const error = theme => `
-  color: ${theme.colors.red.strong};
+  color: ${theme.colors.white};;
 `;
 
 const caption = theme => `
@@ -59,13 +59,13 @@ const h3 = theme => `
 
   font-size: ${theme.fontSizes.h3};
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.blue.strong};
+  color: ${theme.colors.white};
 `;
 const h4 = theme => `
 
   font-size: ${theme.fontSizes.h4};
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.blue.strong};
+  color: ${theme.colors.white};;
 `;
 const h5 = theme => `
 
@@ -77,7 +77,7 @@ const link = theme => `
  
   font-size: ${theme.fontSizes.caption};
   font-weight: ${theme.fontWeights.regular};
-  color: ${theme.colors.link.strong};
+  color: ${theme.colors.white};;
 `;
 
 const variants = {
